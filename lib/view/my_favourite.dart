@@ -10,12 +10,12 @@ class MyFavourites extends StatefulWidget {
 }
 
 class _MyFavouritesState extends State<MyFavourites> {
-   @override
+  @override
   Widget build(BuildContext context) {
     final favouritee = Provider.of<FavouriteProvider>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'My favourites',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
@@ -25,10 +25,10 @@ class _MyFavouritesState extends State<MyFavourites> {
             child: InkWell(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => MyFavourites(),
+                  builder: (context) => const MyFavourites(),
                 ));
               },
-              child: Icon(Icons.favorite),
+              child: const Icon(Icons.favorite),
             ),
           )
         ],
@@ -44,11 +44,12 @@ class _MyFavouritesState extends State<MyFavourites> {
                     builder: (context, value, child) {
                   return ListTile(
                     onTap: () {
-                      if (value.selectedItems.contains(index)) {
-                        value.removeItems(index);
-                      } else {
-                        value.addItems(index);
-                      }
+                      value.removeItems(index);
+                      // if (value.selectedItems.contains(index)) {
+                      //   value.removeItems(index);
+                      // } else {
+                      //   value.addItems(index);
+                      // }
                     },
                     title: Text('item $index'),
                     trailing: Icon(value.selectedItems.contains(index)
@@ -64,4 +65,3 @@ class _MyFavouritesState extends State<MyFavourites> {
     );
   }
 }
-

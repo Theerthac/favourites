@@ -18,7 +18,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Favourites    ',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
@@ -28,10 +28,10 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
             child: InkWell(
               onTap: () {
                 Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => MyFavourites(),
+                  builder: (context) => const MyFavourites(),
                 ));
               },
-              child: Icon(Icons.favorite),
+              child: const Icon(Icons.favorite),
             ),
           )
         ],
@@ -41,7 +41,7 @@ class _FavouriteScreenState extends State<FavouriteScreen> {
         children: [
           Expanded(
             child: ListView.builder(
-              itemCount: 100,
+              itemCount: 50,
               itemBuilder: (context, index) {
                 return Consumer<FavouriteProvider>(
                     builder: (context, value, child) {

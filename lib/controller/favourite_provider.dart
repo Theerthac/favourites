@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class FavouriteProvider extends ChangeNotifier {
-  List<int> _selectedItems = [];
+  final List<int> _selectedItems = [];
   List<int> get selectedItems => _selectedItems;
 
   void addItems(int value) {
